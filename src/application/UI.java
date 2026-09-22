@@ -47,7 +47,6 @@ public class UI {
 		catch (RuntimeException e) {
 			throw new InputMismatchException("Error reading ChessPosition, valid values are between a1 and h8!");
 		}
-		
 	}
 	
 	public static void printMatch(ChessMatch chessMatch, List<ChessPiece> captured) {
@@ -113,7 +112,7 @@ public class UI {
 		List<ChessPiece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
 		List<ChessPiece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
 		
-		System.out.print("Captured Pieces: ");
+		System.out.println("Captured Pieces: ");
 		
 		System.out.print("White: ");
 		System.out.print(ANSI_WHITE);
@@ -121,7 +120,7 @@ public class UI {
 		System.out.println(ANSI_RESET);
 		
 		System.out.print("Black: ");
-		System.out.print(ANSI_BLACK);
+		System.out.print(ANSI_YELLOW);
 		System.out.println(Arrays.toString(black.toArray()));
 		System.out.println(ANSI_RESET);
 	}
